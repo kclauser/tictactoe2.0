@@ -1,6 +1,13 @@
+
 require "sinatra"
 require "json"
 require 'sinatra/reloader' if development?
+
+
+before do
+    content_type 'application/json'
+    headers 'Access-Control-Allow-Origin' => '*'
+  end
 
 class Board
   attr_accessor :positions
